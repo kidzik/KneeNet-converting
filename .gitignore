@@ -1,0 +1,6 @@
+.ipynb_checkpoints
+*~
+*.npy
+*.zip
+*.0
+*.onnx
