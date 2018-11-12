@@ -4,3 +4,7 @@
 *.zip
 *.0
 *.onnx
+*#
+*.tar.gz
+KneeNet-tfjs
+chexnet-tfjs

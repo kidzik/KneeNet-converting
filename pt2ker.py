@@ -79,7 +79,7 @@ for param in pretrained_model.classifier.parameters():
     param.requires_grad = False
 
 # Load the model's trained weights
-pretrained_model.load_state_dict(torch.load('./DenseNet_classification_lr_0.0001_val_acc_0.6913822735084704_pretrained_True_epoch_6_currentLR_1e-05_DropOutProb_0.0', 
+pretrained_model.load_state_dict(torch.load('./KneeNet-pytorch/DenseNet_classification_lr_0.0001_val_acc_0.6913822735084704_pretrained_True_epoch_6_currentLR_1e-05_DropOutProb_0.0', 
                                            map_location=lambda storage, 
                                            loc: storage))
 pretrained_model.train(False)
@@ -92,7 +92,7 @@ from torch.autograd import Variable
 import torch.onnx
 
 # Create a sample image, which onnx needs
-sample_input = np.load('L.npy').astype('float') 
+sample_input = np.load('./KneeNet-pytorch/L.npy').astype('float') 
 print(sample_input)
 sample_input = default_preprocessing(sample_input)
 
@@ -109,4 +109,4 @@ k_model = pytorch_to_keras(pretrained_model, input_dummy, [(3, img_size, img_siz
 
 #print(k_model.summary())
 k_model.save("KneeNet-keras.h5")
-tfjs.converters.save_keras_model(k_model, "KneeNetKeras")
+tfjs.converters.save_keras_model(k_model, "KneeNet-tfjs")
