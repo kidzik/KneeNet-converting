@@ -80,8 +80,8 @@ for param in pretrained_model.classifier.parameters():
 
 # Load the model's trained weights
 pretrained_model.load_state_dict(torch.load('./DenseNet_classification_lr_0.0001_val_acc_0.6913822735084704_pretrained_True_epoch_6_currentLR_1e-05_DropOutProb_0.0', 
-                                            map_location=lambda storage, 
-                                            loc: storage))
+                                           map_location=lambda storage, 
+                                           loc: storage))
 pretrained_model.train(False)
 pretrained_model = pretrained_model.float()
 
